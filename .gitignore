@@ -1,0 +1,7 @@
+exports/
+*.zip
+*.bundle
+*.patch
+node_modules/
+dist/
+build/
