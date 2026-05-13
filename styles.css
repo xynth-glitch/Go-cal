@@ -1,0 +1,66 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8ff;
+  --card: #fff;
+  --text: #111827;
+  --muted: #4b5563;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --glow: #93c5fd;
+  --border: #e5e7eb;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #eef2ff, var(--bg));
+  color: var(--text);
+}
+.app-shell { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+h1 { margin-bottom: 0.25rem; }
+.sub { margin-top: 0; color: var(--muted); }
+.ask-card, .solution-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.08);
+}
+.ask-card { display: grid; gap: 0.65rem; }
+textarea { width: 100%; border-radius: 10px; border: 1px solid var(--border); padding: 0.75rem; }
+button { border: 0; border-radius: 10px; padding: 0.65rem 0.9rem; font-weight: 600; cursor: pointer; }
+.primary { background: var(--primary); color: #fff; }
+.ghost { background: #eef2ff; color: #1e3a8a; }
+.hidden { display: none; }
+.solution-card { margin-top: 1rem; }
+.solution-content { line-height: 1.8; margin: 0.9rem 0; }
+.solution-step { display: block; padding: 0.35rem; border-radius: 8px; transition: all 250ms ease; scroll-margin: 80px; }
+.solution-step.active {
+  background: var(--primary-soft);
+  border: 1px solid var(--glow);
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.45);
+}
+.actions { display: flex; gap: 0.6rem; }
+.teacher-mode { margin-top: 1rem; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.teacher-mode summary { cursor: pointer; padding: 0.8rem 1rem; font-weight: 600; background: #f9fafb; }
+.teacher-panel { padding: 1rem; display: grid; gap: 0.75rem; }
+.controls { display: flex; gap: 0.65rem; align-items: center; }
+#progressBar { width: 100%; }
+.current-chunk { color: #1f2937; font-weight: 500; background: #f8fafc; padding: 0.65rem; border-radius: 8px; min-height: 42px; }
+.timeline { display: grid; gap: 0.45rem; max-height: 180px; overflow: auto; }
+.timeline-item {
+  text-align: left;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.92rem;
+  background: #fff;
+  width: 100%;
+}
+.timeline-item.active { border-color: var(--primary); background: var(--primary-soft); }
+
+@media (max-width: 640px) {
+  .app-shell { margin: 1rem auto; }
+  .controls { gap: 0.45rem; }
+  button { padding: 0.58rem 0.75rem; }
+  .timeline { max-height: 140px; }
+}

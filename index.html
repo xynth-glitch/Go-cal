@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go-Cal - AI Voice Teacher Mode</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <h1>Go-Cal</h1>
+      <p class="sub">Solve math with an interactive Hinglish AI teacher.</p>
+
+      <section class="ask-card">
+        <label for="questionInput">Ask your question</label>
+        <textarea id="questionInput" rows="3" placeholder="e.g. Expand (a+b)^2"></textarea>
+        <button id="solveBtn">Generate Solution</button>
+      </section>
+
+      <section id="solutionCard" class="solution-card hidden">
+        <h2>Solution</h2>
+        <div id="solutionContent" class="solution-content"></div>
+
+        <div class="actions">
+          <button class="ghost" id="helpfulBtn">👍 Helpful</button>
+          <button class="primary" id="voiceBtn">🎤 Voice Explanation</button>
+        </div>
+
+        <details id="teacherMode" class="teacher-mode">
+          <summary>Teacher Mode</summary>
+          <div class="teacher-panel">
+            <div class="controls">
+              <button id="playPauseBtn">▶ Play</button>
+              <input id="progressBar" type="range" min="0" max="100" value="0" />
+            </div>
+            <div id="currentChunk" class="current-chunk">Click play to start explanation.</div>
+            <div id="chunksTimeline" class="timeline" aria-live="polite"></div>
+            <audio id="teacherAudio" preload="metadata"></audio>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
